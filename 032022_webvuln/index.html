@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damien</title>
+    <style>
+        header {
+            color: white;
+            background-color: orange;
+            box-shadow: 0 0 16px orange;
+            /*Pour contenir les marges des enfants*/
+            overflow: hidden;
+        }
+        header h1 {
+            color: white;
+            font-size: 3em;
+            margin-bottom: 0;
+        }
+        header h2{
+            margin-top: 0;
+        }
+        header h1, header h2, main{
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        main h3{
+            border-bottom: 3px solid blue;
+        }
+        article{
+            border-left: 2px solid blue;
+            padding-left: 8px ;
+        }
+        body {
+            margin: 0;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        footer{
+            color : white;
+            background-color: blue;
+            text-align: center;
+            padding: 20px;
+        }
+        footer a {
+            color :inherit;
+        }
+        .image{
+            height: 300px;
+            background-image: url("http://www.picsum.photos/1920/1080");
+        }
+        .column{
+            max-width: 800px;
+            padding: 8px;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="column">
+        <h1> Page d'administration du serveur</h1>
+        <h2> TODO : ajouter le système d'authentification</h2>
+        </div>
+        <div class=image></div>
+        
+    </header>
+    <main>
+        <article>
+            <h3>Etat du serveur</h3>
+            <p>
+                Espace disponible : 2.03 GO <br>
+                Température du CPU : 53 °C
+            </p>
+            </article>
+    <article>
+        <h3>Créer un compte </h3>
+        <p>
+            <!-- enregistré dans /tmp-->
+            <!-- La commande PHP est "echo votre texte > commande.sh"-->
+
+            <form action="enregistrer_user.php" method="post">
+                Veuillez entrer les informations à enregistrer dans la case suivante:<br />
+                <textarea name="user_info" id="user_info">
+                usage : 
+                utilisateur (8 caracteres max) : mot\de\passe
+                </textarea><br />
+                <input type="submit" value="Créer" />
+                </form>
+        </p>
+        </article>
+       
+        <h3>Partie debug </h3>
+        
+        <p>
+            <!-- penser a retirer les commentaires avant le jour de publication-->
+            <!-- execution.php cherche le fichier, le rend exécutable si nécessaire et l'exécute-->
+            Scripts disponibles: <br>
+            - /tmp/reboot  --> pour redémarrer le serveur <br>
+            
+            <form action="execution.php" method="">
+                Localisation du script : (entrez /tmp/reboot pour exécuter reboot)<br>
+                <input type="text" name="location" >
+                <input type="submit" value="Exécuter">
+                
+            </form>
+        </p>
+        
+    </main>
+    <footer>
+        <p>Par Quentin Fraty pour WOCSA</p>
+    </footer>
+</body>
+</html>
